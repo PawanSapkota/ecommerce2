@@ -19,7 +19,7 @@ const ProductFeed = () => {
 
     }, [])    
   return (
-    <div className='grid gap-4 grid-cols-1 -mt-40 z-40 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+    <div className='grid gap-4 grid-cols-1 -mt-32  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
        {
         getProductData.map((product,i)=>{
             return(
