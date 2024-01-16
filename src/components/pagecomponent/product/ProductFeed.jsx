@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Product from '../ui/Product'
 
 const ProductFeed = () => {
-
+  
   const [getProductData,setGetProductData]=useState([])
 
     const url ="https://fakestoreapi.com/products"
@@ -15,11 +15,20 @@ const ProductFeed = () => {
         setGetProductData([...data])   
     
      }
-     getData()    
+     getData()  
 
     }, [])    
+
+//     const login = localStorage.getItem('loggedin')
+// if(!login){
+  
+// }
+    //data correct 
+    // localStorage.setItem('loggedin', true)
+    
+    
   return (
-    <div className='grid gap-4 grid-cols-1 -mt-32  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+    <div className='grid gap-4 grid-cols-1 -mt-32  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 cursor-pointer'>
        {
         getProductData.map((product,i)=>{
             return(
@@ -29,7 +38,7 @@ const ProductFeed = () => {
               description={product.description}
               price={product.price}
               image={product.image}
-              title={product.title}
+              title={product.title}           
               
               />
             )

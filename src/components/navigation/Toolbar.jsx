@@ -6,10 +6,17 @@ import { RxCross2 } from "react-icons/rx";
 import { Secondary, contentAndDevices, shopByDepartment } from "./Navdata";
 import { MdSearch } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../assets/logo-removebg-preview.png";
+import { Link } from "react-router-dom";
+import  { useCart } from "../../hoc/context/CartContext";
 
 const Toolbar = () => {
+
+  const {state:{cart}} = useCart()
+  console.log("cart Length:",cart.length)
+  // console.log(state[0]);
+
   const [isDropDown, setDropDown] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [isToggle, setIsToggle] = useState(false);
@@ -33,15 +40,17 @@ const Toolbar = () => {
     { label: "Computers", value: 5 },
   ];
 
+
+
   return (
     <header>
       {/* First */}
 
       <div className="bg-primary px-6 py-3 mx-auto  flex justify-between flex-grow gap-4 items-center ">
         {/*Logo */}
-        <div className="w-20 flex items-center mt-2">
+        <Link className="w-20 flex items-center mt-2" to={"/"}>
           <img src={logo} alt="Amazon Logo" className="w-full object-contain" />
-        </div>
+        </Link>
 
         {/*Location */}
         <div className="md:grid hidden  grid-cols-3  items-center justify-centers whitespace-nowrap">
@@ -124,7 +133,7 @@ const Toolbar = () => {
           <div className="flex items-center relative">
             <AiOutlineShoppingCart className="text-5xl font-thin text-white" />
             <div className="bg-pink-200 w-5 h-5 rounded-full flex justify-center items-center absolute top-0 right-0 md:left-1/2">
-              <p className=" font-semibold text-xs text-black ">1</p>
+              <p className=" font-semibold text-xs text-black ">{}</p>
             </div>
 
             <h1 className=" font-semibold text-sm hidden md:inline-block mt-2 ">
