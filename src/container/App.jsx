@@ -6,14 +6,14 @@ import CartContextApi from "../hoc/context/CartContext";
 
 function App() {
   return (
-    <CartContextApi>
+    
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/singleproduct/:id/:title" element={<SingleProduct />} />
         </Routes>
       </Layout>
-    </CartContextApi>
+   
   );
 }
 

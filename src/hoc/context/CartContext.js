@@ -5,8 +5,7 @@ export const CartContext = createContext();
 
 const CartContextApi = ({children}) => { 
   const initialState ={cart:[]}
-  const [state, dispatch] = useReducer(CartReducer,initialState );
-    
+  const [state, dispatch] = useReducer(CartReducer,initialState );   
   
 
   console.log(state.cart.length);

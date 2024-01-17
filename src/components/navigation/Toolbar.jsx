@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import { Secondary, contentAndDevices, shopByDepartment } from "./Navdata";
 import { MdSearch } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
-import {  useState } from "react";
+import {   useState } from "react";
 import logo from "../../assets/logo-removebg-preview.png";
 import { Link } from "react-router-dom";
 import  {
@@ -14,8 +14,14 @@ import  {
 } from "../../hoc/context/CartContext";
 
 const Toolbar = () => {
+  
+
 
   const {state:{cart}} = useCart()
+
+ 
+
+  console.log("cart Length:", cart.length);
   console.log("cart Length1:",cart.length)
   // console.log(state[0]);
 
@@ -44,7 +50,7 @@ const Toolbar = () => {
 
   return (
    
-          <header>
+          <header >
             {/* First */}
             <div className="bg-primary px-6 py-3 mx-auto  flex justify-between flex-grow gap-4 items-center ">
               {/*Logo */}
@@ -141,8 +147,11 @@ const Toolbar = () => {
                 <div className="flex items-center relative">
                   <AiOutlineShoppingCart className="text-5xl font-thin text-white" />
                   <div className="bg-pink-200 w-5 h-5 rounded-full flex justify-center items-center absolute top-0 right-0 md:left-1/2">
-                    <p className=" font-semibold text-xs text-black ">
+                    {/* <p className=" font-semibold text-xs text-black ">
                       {cart.length}
+                    </p> */}
+                    <p className=" font-semibold text-xs text-black ">
+                     {cart.length}
                     </p>
                   </div>
 

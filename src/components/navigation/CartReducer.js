@@ -2,27 +2,31 @@
 const CartReducer = (state,action) => {
   console.log("action",action)
 
-  switch (action.type) {
+  switch(action.type){
     case "ADD_TO_CART":
-      console.log("Adding to cart:", action.payload);
       return {
-        ...state,
-        cart: [...state.cart, action.payload],
-      };
-    
-    
-    default:
-      return state;
-    }
+            ...state,
+            cart: [...state.cart, {...action.payload, qty: 1 }]
+          }
+         
+          default:
+            return state
+        }
+
+
   }
-  // if(action.type === 'ADD_TO_CART'){
+
+  
+  // if(action.type == 'ADD_TO_CART'){
   //   return {
   //     ...state,
   //     cart: [...state.cart, { ...action.payload, qty: 1 }],
-  //   };
+  //   }
   // }
-
   // return state
+
+
+  
   
     // switch (action.type) {
     //   case "ADD_TO_CART":
