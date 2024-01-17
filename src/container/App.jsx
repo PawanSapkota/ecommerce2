@@ -1,19 +1,20 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "../pages/home/Home";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "../hoc/layout/Layout";
 import SingleProduct from "../components/pagecomponent/product/SingleProduct";
-import CartContextApi from "../hoc/context/CartContext";
+
+import Home from "../pages/home/Home";
 
 function App() {
-  return (
-    
-      <Layout>
+  return (    
+      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/singleproduct/:id/:title" element={<SingleProduct />} />
-        </Routes>
-      </Layout>
-   
+          <Route path="/" element={<Layout />} >
+            <Route index element={<Home/>}/>
+            <Route path="/singleproduct/:id/:title" element={<SingleProduct />} />          
+          </Route>
+        </Routes>        
+      </BrowserRouter>
+    
   );
 }
 

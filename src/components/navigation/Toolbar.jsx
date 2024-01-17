@@ -147,9 +147,7 @@ const Toolbar = () => {
                 <div className="flex items-center relative">
                   <AiOutlineShoppingCart className="text-5xl font-thin text-white" />
                   <div className="bg-pink-200 w-5 h-5 rounded-full flex justify-center items-center absolute top-0 right-0 md:left-1/2">
-                    {/* <p className=" font-semibold text-xs text-black ">
-                      {cart.length}
-                    </p> */}
+                  
                     <p className=" font-semibold text-xs text-black ">
                      {cart.length}
                     </p>
