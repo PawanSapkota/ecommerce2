@@ -4,11 +4,10 @@ import CartReducer from '../../components/navigation/CartReducer';
 export const CartContext = createContext();
 
 const CartContextApi = ({children}) => { 
-  const initialState ={count:0}
-  const [state, dispatch] = useReducer(CartReducer,{
-    initialState:initialState,
-    cart:[]
-  }); 
+  const initialState ={cart:[]}
+  const [state, dispatch] = useReducer(CartReducer,initialState );
+    
+  
 
   console.log(state.cart.length);
 
