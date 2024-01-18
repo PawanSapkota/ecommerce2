@@ -12,10 +12,7 @@ const Product = ({category,description,price,image,title,id}) => {
     <p className='text-xs text-gray-400 absolute top-1 right-1 '>{category}</p>
     
     <Link className='flex w-full justify-center items-center pt-2 ' to={`/singleproduct/${id}/product=${title}`}>
-    {/* <div className='flex w-full justify-center items-center pt-2 'onClick={(()=>{
-      Navigate(`/singleproduct/${id}`,{state:{rating:rating}})
-    })}> */}
-    {/* <Link className='flex w-full justify-center items-center pt-2 ' to={{pathname:`/singleproduct/${id}`,state: { rating }}}> */}
+
     <img alt='fdsa' className='object-contain w-[200px] h-[200px]' src={image}/>
 
     </Link>

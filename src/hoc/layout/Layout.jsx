@@ -6,7 +6,7 @@ const Layout = ({  }) => {
   return (
     <div>     
         <Toolbar />      
-      <div className="bg-gray-100">
+          <div className="bg-gray-100">
         {<Outlet/>}
         </div>
     </div>
